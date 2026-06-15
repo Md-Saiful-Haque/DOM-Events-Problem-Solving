@@ -1,4 +1,4 @@
-// Problem 1: Deep Clone an Object
+// Problem 1: Debounce Function
 
 function debounce(fn, delay) {
     let timer;
@@ -12,7 +12,7 @@ function debounce(fn, delay) {
     };
 }
 
-// Problem 2: Event Emitter
+// Problem 2: Throttle Function
 
 
 function throttle(fn, limit) {
@@ -26,4 +26,40 @@ function throttle(fn, limit) {
             fn(...args);
         }
     };
+}
+
+
+// Problem 3: Deep Clone an Object
+
+function deepClone(obj) {
+
+    if (obj === null || typeof obj !== "object") {
+        return obj;
+    }
+
+    const clone = Array.isArray(obj) ? [] : {};
+
+    for (let key in obj) {
+        clone[key] = deepClone(obj[key]);
+    }
+
+    return clone;
+}
+
+
+// Problem 5: Implement Array.prototype.map from Scratch
+
+function myMap(arr, callback) {
+
+    const result = [];
+
+    for (let i = 0; i < arr.length; i++) {
+
+        result.push(
+            callback(arr[i], i, arr)
+        );
+
+    }
+
+    return result;
 }
