@@ -29,8 +29,22 @@ async function retry(fn, times) {
 
 // Problem 3: Implement Promise.all from Scratch
 
-
-
 // Problem 4: Flatten Object (Deep)
+
+function flattenObject(obj, prefix = '') {
+  const result = {};
+  
+  for (const [key, value] of Object.entries(obj)) {
+    const newKey = prefix ? `${prefix}.${key}` : key;
+    
+    if (value !== null && typeof value === 'object' && !Array.isArray(value)) {
+      Object.assign(result, flattenObject(value, newKey));
+    } else {
+      result[newKey] = value;
+    }
+  }
+  
+  return result;
+}
 
 // Problem 5: Group Array by Property
