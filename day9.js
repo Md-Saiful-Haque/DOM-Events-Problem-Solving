@@ -36,6 +36,24 @@ const str1 = "listen";
 const str2 = "silent";
 
 console.log(isAnagram(str1, str2));
+
 // Problem 3: Find Missing Number
+
+function findMissing(arr, n) {
+    const expectedSum = (n * (n + 1)) / 2;
+
+    let actualSum = 0;
+    for (let num of arr) {
+        actualSum += num;
+    }
+
+    return expectedSum - actualSum;
+}
+
+const arr = [1, 2, 4, 5];
+const n = 5;
+
+console.log(findMissing(arr, n));
+
 // Problem 4: Valid Parentheses
 // Problem 5: Binary Search
