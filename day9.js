@@ -25,7 +25,17 @@ console.log(twoSum(arr, target));
 
 // Problem 2: Check Anagram
 
+function isAnagram(str1, str2) {
+    const sorted1 = str1.toLowerCase().split('').sort().join('');
+    const sorted2 = str2.toLowerCase().split('').sort().join('');
 
+    return sorted1 === sorted2;
+}
+
+const str1 = "listen";
+const str2 = "silent";
+
+console.log(isAnagram(str1, str2));
 // Problem 3: Find Missing Number
 // Problem 4: Valid Parentheses
 // Problem 5: Binary Search
